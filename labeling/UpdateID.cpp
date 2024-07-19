@@ -1634,7 +1634,7 @@ void UpdateID::printOriginalAdjacentList(vector<AdjacentList> adjLists) {
  *************************************************/
 
 void UpdateID::printAdjacentList(vector<AdjacentList> adjLists) {
-	// cout << "------- Relabeled Adjacent List -------" << endl;
+	cout << "------- Relabeled Adjacent List -------" << endl;
 
 	adjLists = deleteSameAdjLists(adjLists);
 	set<int> faces;
@@ -1656,7 +1656,7 @@ void UpdateID::printAdjacentList(vector<AdjacentList> adjLists) {
 	vector<vector<int>> func_e(num_e, vector<int>(num_e, -1));
 	relabelEdgesID(func_e, func_v, edges, adjLists);
 	
-	// printRelabeledList(func_f, func_v, func_e, adjLists);
+	printRelabeledList(func_f, func_v, func_e, adjLists);
 	printNumbersAndEdgesList(faces, edges, vertices);
 	// printBaseFaceBaceEdgePairs(func_f, func_v, func_e, adjLists);
 
