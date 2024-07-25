@@ -36,6 +36,6 @@ struct UnfoldingDimensions {
 	int margin_right;
 	//! 盤面の左余白
 	int margin_left;
-	//! 上余白が足りない際にシフトする値
+	//! 上の余白が足りない際にシフトする値
 	int top_shift;
 };
