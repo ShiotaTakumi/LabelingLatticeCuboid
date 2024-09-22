@@ -51,8 +51,10 @@ int main() {
 	 * 格子立方体の一辺の長さを決める値を入力
 	 * 入力は a ≤ b となるように調整
 	 *************************************************/
-	cout << "a: "; cin >> unfoldDim.a; 
-	cout << "b: "; cin >> unfoldDim.b;
+	// cout << "a: "; 
+	cin >> unfoldDim.a; 
+	// cout << "b: "; 
+	cin >> unfoldDim.b;
 	if(unfoldDim.a > unfoldDim.b) {
 		swap(unfoldDim.a, unfoldDim.b);
 	}
@@ -61,9 +63,12 @@ int main() {
 	 * 格子直方体の縦の長さ・横の長さ・高さを入力
 	 * 入力は x ≤ y ≤ z となるように調整
 	 *************************************************/
-	cout << "x: "; cin >> unfoldDim.x; 
-	cout << "y: "; cin >> unfoldDim.y; 
-	cout << "z: "; cin >> unfoldDim.z; 
+	// cout << "x: "; 
+	cin >> unfoldDim.x; 
+	// cout << "y: "; 
+	cin >> unfoldDim.y; 
+	// cout << "z: "; 
+	cin >> unfoldDim.z; 
 	if (unfoldDim.x > unfoldDim.y) swap(unfoldDim.x, unfoldDim.y);
 	if (unfoldDim.x > unfoldDim.z) swap(unfoldDim.x, unfoldDim.z);
 	if (unfoldDim.y > unfoldDim.z) swap(unfoldDim.y, unfoldDim.z);

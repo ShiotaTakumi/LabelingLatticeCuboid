@@ -1473,11 +1473,12 @@ void UpdateID::relabelEdgesID(vector<vector<int>>& func_e, vector<int> func_v, s
  * 面・辺・頂点の個数および，辺の両端点のリストを出力
  *************************************************/
 void UpdateID::printNumbersAndEdgesList(set<int> faces, set<pair<int, int>> edges, set<int> vertices) {
-	cout << "# Faces: " << faces.size() << endl;
-	cout << "# Vertices: " << vertices.size() << endl;
-	cout << "# Edges: " << edges.size() << endl;
-	cout << "\nEdge Lists: " << endl;
-	for(auto e: edges) cout << e.first << " " << e.second << endl;
+	// cout << "# Faces: " << faces.size() << endl;
+	// cout << "# Vertices: " << vertices.size() << endl;
+	// cout << "# Edges: " << edges.size() << endl;
+	cout << "p edge " << vertices.size() << " " << edges.size() << endl;
+	// cout << "\nEdge Lists: " << endl;
+	for(auto e: edges) cout << "e " << e.first + 1 << " " << e.second + 1 << endl;
 	cout << endl;
 }
 
@@ -1510,16 +1511,16 @@ void UpdateID::printLabeledList(vector<AdjacentList> adjLists) {
  * 再ラベリングした隣接リストを出力
  *************************************************/
 void UpdateID::printRelabeledList(vector<int> func_f, vector<int> func_v, vector<vector<int>> func_e, vector<AdjacentList> adjLists) {
-	cout << "# --- #Faces ---" << endl;
+	cout << "# --- # Faces ---" << endl;
 	cout << "NF " << adjLists.size() << endl;
 	for(auto adj: adjLists) {
 		cout << "# --- Face " << func_f[adj.id] << " ---" << endl;
 		cout << "N 4" << endl;
-		// cout << "V " 
-		// 	 << func_v[adj.vertex[0]] << " " 
-		// 	 << func_v[adj.vertex[1]] << " " 
-		// 	 << func_v[adj.vertex[2]] << " " 
-		// 	 << func_v[adj.vertex[3]] << endl;
+		cout << "V " 
+		 	 << func_v[adj.vertex[0]] << " " 
+		 	 << func_v[adj.vertex[1]] << " " 
+		 	 << func_v[adj.vertex[2]] << " " 
+		 	 << func_v[adj.vertex[3]] << endl;
 		cout << "E " ;
 		int u, v;
 		u = func_v[adj.vertex[0]];
@@ -1545,6 +1546,7 @@ void UpdateID::printRelabeledList(vector<int> func_f, vector<int> func_v, vector
 			 << func_f[adj.face[3]] << endl;
 		// cout << endl;
 	}
+	cout << endl;
 }
 
 /*************************************************
@@ -1658,7 +1660,7 @@ void UpdateID::printAdjacentList(vector<AdjacentList> adjLists) {
 	
 	printRelabeledList(func_f, func_v, func_e, adjLists);
 	printNumbersAndEdgesList(faces, edges, vertices);
-	// printBaseFaceBaceEdgePairs(func_f, func_v, func_e, adjLists);
+	printBaseFaceBaceEdgePairs(func_f, func_v, func_e, adjLists);
 
 
 	/* 写像の関係を出力 */
